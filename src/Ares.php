@@ -151,7 +151,7 @@ class Ares
             throw new AresException('IČ firmy musí být zadáno.');
         }
 
-        $cachedFileName = $id . '_' . date($this->cacheStrategy) . '.php';
+        $cachedFileName = $id . '_' . date($this->cacheStrategy) . '.cache';
         $cachedFile = $this->cacheDir . '/bas_' . $cachedFileName;
         $cachedRawFile = $this->cacheDir . '/bas_raw_' . $cachedFileName;
 
@@ -314,7 +314,7 @@ class Ares
         // Sestaveni URL
         $url = $this->wrapUrl(sprintf(self::URL_RES, $id));
 
-        $cachedFileName = $id . '_' . date($this->cacheStrategy) . '.php';
+        $cachedFileName = $id . '_' . date($this->cacheStrategy) . '.cache';
         $cachedFile = $this->cacheDir . '/res_' . $cachedFileName;
         $cachedRawFile = $this->cacheDir . '/res_raw_' . $cachedFileName;
 
@@ -375,7 +375,7 @@ class Ares
         // Sestaveni URL
         $url = $this->wrapUrl(sprintf(self::URL_TAX, $id));
 
-        $cachedFileName = $id . '_' . date($this->cacheStrategy) . '.php';
+        $cachedFileName = $id . '_' . date($this->cacheStrategy) . '.cache';
         $cachedFile = $this->cacheDir . '/tax_' . $cachedFileName;
         $cachedRawFile = $this->cacheDir . '/tax_raw_' . $cachedFileName;
 
@@ -433,7 +433,7 @@ class Ares
             urlencode(Lib::stripDiacritics($city))
         ));
 
-        $cachedFileName = date($this->cacheStrategy) . '_' . md5($name . $city) . '.php';
+        $cachedFileName = date($this->cacheStrategy) . '_' . md5($name . $city) . '.cache';
         $cachedFile = $this->cacheDir . '/find_' . $cachedFileName;
         $cachedRawFile = $this->cacheDir . '/find_raw_' . $cachedFileName;
 
